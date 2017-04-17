@@ -1,0 +1,468 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="http://millermedeiros.github.com/crossroads.js/"
+
+    >crossroads (v0.12.2)</a>
+</h1>
+<h4>Flexible router which can be used in multiple environments</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.crossroads">module crossroads</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.crossroads.NORM_AS_ARRAY">
+            function <span class="apidocSignatureSpan">crossroads.</span>NORM_AS_ARRAY
+            <span class="apidocSignatureSpan">(req, vals)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.crossroads.NORM_AS_OBJECT">
+            function <span class="apidocSignatureSpan">crossroads.</span>NORM_AS_OBJECT
+            <span class="apidocSignatureSpan">(req, vals)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.crossroads.bypassed.dispatch">
+            function <span class="apidocSignatureSpan">crossroads.</span>bypassed.dispatch
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.crossroads.routed.dispatch">
+            function <span class="apidocSignatureSpan">crossroads.</span>routed.dispatch
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">crossroads.</span>_piped</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">crossroads.</span>_prevBypassedRequest</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">crossroads.</span>_prevMatchedRequest</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">crossroads.</span>_prevRoutes</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">crossroads.</span>_routes</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">crossroads.</span>bypassed</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">crossroads.</span>routed</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">crossroads.</span>VERSION</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.crossroads.NORM_AS_ARRAY">module crossroads.NORM_AS_ARRAY</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.crossroads.NORM_AS_ARRAY.NORM_AS_ARRAY">
+            function <span class="apidocSignatureSpan">crossroads.</span>NORM_AS_ARRAY
+            <span class="apidocSignatureSpan">(req, vals)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.crossroads.NORM_AS_OBJECT">module crossroads.NORM_AS_OBJECT</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.crossroads.NORM_AS_OBJECT.NORM_AS_OBJECT">
+            function <span class="apidocSignatureSpan">crossroads.</span>NORM_AS_OBJECT
+            <span class="apidocSignatureSpan">(req, vals)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.crossroads.bypassed">module crossroads.bypassed</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.crossroads.bypassed.dispatch">
+            function <span class="apidocSignatureSpan">crossroads.bypassed.</span>dispatch
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">crossroads.bypassed.</span>_bindings</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">crossroads.bypassed.</span>_prevParams</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.crossroads.bypassed.dispatch">module crossroads.bypassed.dispatch</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.crossroads.bypassed.dispatch.dispatch">
+            function <span class="apidocSignatureSpan">crossroads.bypassed.</span>dispatch
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.crossroads.routed">module crossroads.routed</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.crossroads.routed.dispatch">
+            function <span class="apidocSignatureSpan">crossroads.routed.</span>dispatch
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">crossroads.routed.</span>_bindings</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">crossroads.routed.</span>_prevParams</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.crossroads.routed.dispatch">module crossroads.routed.dispatch</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.crossroads.routed.dispatch.dispatch">
+            function <span class="apidocSignatureSpan">crossroads.routed.</span>dispatch
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.crossroads" id="apidoc.module.crossroads">module crossroads</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.crossroads.NORM_AS_ARRAY" id="apidoc.element.crossroads.NORM_AS_ARRAY">
+        function <span class="apidocSignatureSpan">crossroads.</span>NORM_AS_ARRAY
+        <span class="apidocSignatureSpan">(req, vals)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">NORM_AS_ARRAY = function (req, vals) {
+    return [vals.vals_];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.crossroads.NORM_AS_OBJECT" id="apidoc.element.crossroads.NORM_AS_OBJECT">
+        function <span class="apidocSignatureSpan">crossroads.</span>NORM_AS_OBJECT
+        <span class="apidocSignatureSpan">(req, vals)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">NORM_AS_OBJECT = function (req, vals) {
+    return [vals];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.crossroads.bypassed.dispatch" id="apidoc.element.crossroads.bypassed.dispatch">
+        function <span class="apidocSignatureSpan">crossroads.</span>bypassed.dispatch
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bypassed.dispatch = function (){
+    Signal.prototype.dispatch.apply(self, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.crossroads.routed.dispatch" id="apidoc.element.crossroads.routed.dispatch">
+        function <span class="apidocSignatureSpan">crossroads.</span>routed.dispatch
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">routed.dispatch = function (){
+    Signal.prototype.dispatch.apply(self, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.crossroads.NORM_AS_ARRAY" id="apidoc.module.crossroads.NORM_AS_ARRAY">module crossroads.NORM_AS_ARRAY</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.crossroads.NORM_AS_ARRAY.NORM_AS_ARRAY" id="apidoc.element.crossroads.NORM_AS_ARRAY.NORM_AS_ARRAY">
+        function <span class="apidocSignatureSpan">crossroads.</span>NORM_AS_ARRAY
+        <span class="apidocSignatureSpan">(req, vals)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">NORM_AS_ARRAY = function (req, vals) {
+    return [vals.vals_];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.crossroads.NORM_AS_OBJECT" id="apidoc.module.crossroads.NORM_AS_OBJECT">module crossroads.NORM_AS_OBJECT</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.crossroads.NORM_AS_OBJECT.NORM_AS_OBJECT" id="apidoc.element.crossroads.NORM_AS_OBJECT.NORM_AS_OBJECT">
+        function <span class="apidocSignatureSpan">crossroads.</span>NORM_AS_OBJECT
+        <span class="apidocSignatureSpan">(req, vals)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">NORM_AS_OBJECT = function (req, vals) {
+    return [vals];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.crossroads.bypassed" id="apidoc.module.crossroads.bypassed">module crossroads.bypassed</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.crossroads.bypassed.dispatch" id="apidoc.element.crossroads.bypassed.dispatch">
+        function <span class="apidocSignatureSpan">crossroads.bypassed.</span>dispatch
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dispatch = function (){
+    Signal.prototype.dispatch.apply(self, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.crossroads.bypassed.dispatch" id="apidoc.module.crossroads.bypassed.dispatch">module crossroads.bypassed.dispatch</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.crossroads.bypassed.dispatch.dispatch" id="apidoc.element.crossroads.bypassed.dispatch.dispatch">
+        function <span class="apidocSignatureSpan">crossroads.bypassed.</span>dispatch
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dispatch = function (){
+    Signal.prototype.dispatch.apply(self, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.crossroads.routed" id="apidoc.module.crossroads.routed">module crossroads.routed</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.crossroads.routed.dispatch" id="apidoc.element.crossroads.routed.dispatch">
+        function <span class="apidocSignatureSpan">crossroads.routed.</span>dispatch
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dispatch = function (){
+    Signal.prototype.dispatch.apply(self, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.crossroads.routed.dispatch" id="apidoc.module.crossroads.routed.dispatch">module crossroads.routed.dispatch</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.crossroads.routed.dispatch.dispatch" id="apidoc.element.crossroads.routed.dispatch.dispatch">
+        function <span class="apidocSignatureSpan">crossroads.routed.</span>dispatch
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dispatch = function (){
+    Signal.prototype.dispatch.apply(self, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
