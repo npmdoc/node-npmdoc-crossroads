@@ -1,4 +1,7 @@
-# api documentation for  [crossroads (v0.12.2)](http://millermedeiros.github.com/crossroads.js/)  [![npm package](https://img.shields.io/npm/v/npmdoc-crossroads.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-crossroads) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-crossroads.svg)](https://travis-ci.org/npmdoc/node-npmdoc-crossroads)
+# npmdoc-crossroads
+
+#### basic api documentation for  [crossroads (v0.12.2)](http://millermedeiros.github.com/crossroads.js/)  [![npm package](https://img.shields.io/npm/v/npmdoc-crossroads.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-crossroads) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-crossroads.svg)](https://travis-ci.org/npmdoc/node-npmdoc-crossroads)
+
 #### Flexible router which can be used in multiple environments
 
 [![NPM](https://nodei.co/npm/crossroads.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/crossroads)
@@ -64,7 +67,8 @@
         "pretest": "node build",
         "test": "node node_modules/.bin/jasmine-node dev/tests/spec"
     },
-    "version": "0.12.2"
+    "version": "0.12.2",
+    "bin": {}
 }
 ```
 
